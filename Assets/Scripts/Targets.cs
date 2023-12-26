@@ -28,6 +28,11 @@ public class Targets : MonoBehaviour
         
     }
 
+    void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
     private float RandomForce()
     {
         return Random.Range(minSpeed, maxSpeed);

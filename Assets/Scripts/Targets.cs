@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Targets : MonoBehaviour
 {
-    private Rigidbody rb;
-    private float minSpeed = 12;
-    private float maxSpeed = 16;
-    private float maxTorque = 10;
-    private float xRange = 4;
-    private float ySpawnPos = -2;
+    Rigidbody rb;
+    float minSpeed = 12;
+    float maxSpeed = 16;
+    float maxTorque = 10;
+    float xRange = 4;
+    float ySpawnPos = -2;
 
     // Start is called before the first frame update
     void Start()
@@ -40,17 +40,17 @@ public class Targets : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private float RandomForce()
+    float RandomForce()
     {
         return Random.Range(minSpeed, maxSpeed);
     }
 
-    private float RandomTorque()
+    float RandomTorque()
     {
         return Random.Range(-maxTorque, maxTorque);
     }
 
-    private Vector3 RandomSpawnPosition()
+    Vector3 RandomSpawnPosition()
     {
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPos);
     }

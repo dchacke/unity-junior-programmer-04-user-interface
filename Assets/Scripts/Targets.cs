@@ -33,6 +33,13 @@ public class Targets : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // The sensor is the only game object that is a trigger, so this method
+    // will only run when a target enters the sensor.
+    void OnTriggerEnter()
+    {
+        Destroy(gameObject);
+    }
+
     private float RandomForce()
     {
         return Random.Range(minSpeed, maxSpeed);

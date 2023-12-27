@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
 
     float spawnRate = 1.0f;
     int score = 0;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("SpawnTargets");
         UpdateScore(0);
+        gameOverText.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

@@ -45,6 +45,11 @@ public class Targets : MonoBehaviour
     void OnTriggerEnter()
     {
         Destroy(gameObject);
+
+        if (!gameObject.CompareTag("Bad"))
+        {
+            gm.GameOver();
+        }
     }
 
     float RandomForce()

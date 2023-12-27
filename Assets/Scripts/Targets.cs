@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Targets : MonoBehaviour
 {
+    public int pointValue = 5;
+
     Rigidbody rb;
     float minSpeed = 12;
     float maxSpeed = 16;
@@ -33,7 +35,7 @@ public class Targets : MonoBehaviour
     void OnMouseDown()
     {
         Destroy(gameObject);
-        gm.UpdateScore(5);
+        gm.UpdateScore(pointValue);
     }
 
     // The sensor is the only game object that is a trigger, so this method

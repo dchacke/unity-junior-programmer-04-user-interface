@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private IEnumerator SpawnTargets()
+    IEnumerator SpawnTargets()
     {
         while (true)
         {

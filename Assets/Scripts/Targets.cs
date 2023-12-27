@@ -10,10 +10,12 @@ public class Targets : MonoBehaviour
     float maxTorque = 10;
     float xRange = 4;
     float ySpawnPos = -2;
+    GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
 
         rb.AddForce(Vector3.up * RandomForce(), ForceMode.Impulse);
@@ -31,6 +33,7 @@ public class Targets : MonoBehaviour
     void OnMouseDown()
     {
         Destroy(gameObject);
+        gm.UpdateScore(5);
     }
 
     // The sensor is the only game object that is a trigger, so this method

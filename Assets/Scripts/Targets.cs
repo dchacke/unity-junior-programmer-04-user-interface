@@ -5,6 +5,7 @@ using UnityEngine;
 public class Targets : MonoBehaviour
 {
     public int pointValue = 5;
+    public ParticleSystem explosionParticle;
 
     Rigidbody rb;
     float minSpeed = 12;
@@ -35,6 +36,7 @@ public class Targets : MonoBehaviour
     void OnMouseDown()
     {
         Destroy(gameObject);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         gm.UpdateScore(pointValue);
     }
 

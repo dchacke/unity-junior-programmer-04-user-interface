@@ -29,8 +29,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
+        Debug.Log("difficulty is " + difficulty);
+        spawnRate /= difficulty;
         isGameActive = true;
         titleScreen.gameObject.SetActive(false);
         UpdateScore(0);
